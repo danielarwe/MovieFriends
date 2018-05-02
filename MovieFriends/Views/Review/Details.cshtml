@@ -1,0 +1,89 @@
+﻿@model MovieFriends.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@(Model.ReviewerFirstName) @(Model.ReviewerLastName) gives <em>@(Model.Title)</em> @(Model.ReviewerRating) stars!</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewerFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewerFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewerLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewerLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewerRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewerRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

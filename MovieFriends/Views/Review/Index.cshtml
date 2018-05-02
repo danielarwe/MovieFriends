@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MovieFriends.Models.Review>
+
+@{
+    ViewBag.Title = "Movie Reviews";
+}
+
+<h2>Movie Reviews</h2>
+
+<p>
+    @Html.ActionLink("Create New Review", "Create")
+</p>
+<table class="table">
+    <tr class="table-header">
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            Reviewed by
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewerRating)
+        </th>
+        <th colspan="3"></th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+  
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReviewerFirstName) @Html.DisplayFor(modelItem => item.ReviewerLastName)
+        </td>
+        <td style="padding-left:40px;">
+            @Html.DisplayFor(modelItem => item.ReviewerRating)
+        </td>
+     
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReviewId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewId })
+        </td>
+    </tr>
+}
+
+</table>
